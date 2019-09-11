@@ -5,16 +5,22 @@ An adapter to let you use [Twig](https://github.com/twigjs/twig.js) templates wi
 ## Installation
 
 ```bash
-$ npm install --save @wearewondrous/fractal-twig-drupal-adapter
+$ npm install --save @goat-cli/fractal-twig-adapter
 ```
 
 in your `fractal.js`
 
 ```js
 const fractal = require('@frctl/fractal').create();
-const twigAdapter = require('@wearewondrous/fractal-twig-drupal-adapter');
+const twigAdapter = require('@goat-cli/fractal-twig-adapter');
 const twig = twigAdapter({
-  handlePrefix: '@components/',
+  nameSpaces: {
+    atoms: '01-atoms',
+    molecules: '02-molecules',
+    organisms: '03-organisms',
+    templates: '04-templates',
+    pages: '05-pages',
+  },
 });
 
 fractal.components.engine(twig);
@@ -57,7 +63,7 @@ const twig = twigAdapter({
 
 `{% trans %}` - The Drupal core translate tag.
 
-## Creator
+## Original Creator
 
 [WONDROUS](https://www.wearewondrous.com/)
 
