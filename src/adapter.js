@@ -143,7 +143,6 @@ class TwigAdapter extends Fractal.Adapter {
             paths.push(Path.join(sourcePath, location.replace(self._config.handlePrefix, '')));
             // @handle/to/collection => absolute/path/to/collection/collection.twig
             paths.push(Path.join(sourcePath, location.replace(self._config.handlePrefix, ''), basename + '.twig'));
-            console.log(paths, location, basename);
             return paths;
         }
 
@@ -195,7 +194,6 @@ class TwigAdapter extends Fractal.Adapter {
             this.attr = [];
 
             this.addClass = function(...str) {
-                // console.log(str);
                 self.classes = _.flatten(str).join(' ');
 
                 return self;
@@ -253,7 +251,6 @@ class TwigAdapter extends Fractal.Adapter {
                 });
                 resolve(template.render(context));
             } catch (e) {
-                console.log(e);
                 reject(new Error(e));
             }
 

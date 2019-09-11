@@ -37,9 +37,9 @@ This adapter allows you to use some Drupal filters, functions and tags.
 
 `|field_value` - Provided by the module [drupal/twig_field_value](https://www.drupal.org/projects/twig_field_value) to use plain outputs from a field.
 
-#### Add Custom Filters
+#### Add Custom Filters, functions, tests and tags
 
-You have the ability to extend Twig with custom filters by adding any filter functions to the twigAdapter configuration. The name of the function will be used as the filter name. For example, to create a `|render` filter:
+You have the ability to extend Twig with custom filters, functions, tests and tags by passing a function to the twig adapter as follows:
 
 ```js
 const twig = twigAdapter({
@@ -50,6 +50,7 @@ const twig = twigAdapter({
   }
 });
 ```
+ For example the a filter: the name of the function will be used as the filter name (eg: `|render`).
 
 ### Supported Functions
 
